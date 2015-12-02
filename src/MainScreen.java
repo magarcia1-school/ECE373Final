@@ -46,7 +46,7 @@ public class MainScreen extends Component {
     public static void main(String[] args) {
         JFrame f = new JFrame("Start Wars");
         
-        ImageIcon XWingShip = new ImageIcon("XWingFighter.png");
+//        ImageIcon XWingShip = new ImageIcon("XWingFighter.png");
 
             
         f.addWindowListener(new WindowAdapter(){
@@ -56,8 +56,6 @@ public class MainScreen extends Component {
             });
         
        // device.setFullScreenWindow(f);
-        f.add(new JLabel(XWingShip));
-
         f.add(new MainScreen());
         f.pack();
         f.setResizable(false);
