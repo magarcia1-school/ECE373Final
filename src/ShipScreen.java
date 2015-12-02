@@ -1,3 +1,8 @@
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 public class ShipScreen
 {
 	public BufferedImage loadXWing()
@@ -9,5 +14,7 @@ public class ShipScreen
 			img = ImageIO.read(new File("XWingFighter.png"));
 		} catch (IOException e) {
 		}
+		//return the loaded image
+		return img;
 	}
 }
