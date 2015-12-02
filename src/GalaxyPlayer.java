@@ -7,11 +7,16 @@
  *
  */
 
+
 public class GalaxyPlayer 
 {
+	public static final int JEDI = 0;
+	public static final int SITH = 1;
+	
 	private String name;
 	private Ship battleShip;
-	private Proficiency experience;
+	private String experience;
+	private boolean chosenSide;
 
 	public Ship getBattleShip() 
 	{
@@ -23,12 +28,12 @@ public class GalaxyPlayer
 		this.battleShip = battleShip;
 	}
 
-	public Proficiency getExperience() 
+	public String getExperience() 
 	{
 		return experience;
 	}
 
-	public void setExperience(Proficiency experience) 
+	public void setExperience(String experience) 
 	{
 		this.experience = experience;
 	}
@@ -43,5 +48,6 @@ public class GalaxyPlayer
 	{
 		this.name = name;
 	}
+	
 	
 }
