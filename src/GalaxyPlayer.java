@@ -10,9 +10,11 @@
 
 public class GalaxyPlayer 
 {
+	
 	public static final int JEDI = 0;
 	public static final int SITH = 1;
 	
+	private int test = 2;
 	private String name;
 	private Ship battleShip;
 	private String experience;
