@@ -4,9 +4,10 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  * This class demonstrates how to load an Image from an external file
@@ -18,6 +19,8 @@ public class MainScreen extends Component {
     BufferedImage img;
     int width = getWidth();
     int height = getHeight();
+    
+    ShipScreen shipScreen;
     
     
     public void paint(Graphics g) {
@@ -42,6 +45,9 @@ public class MainScreen extends Component {
 
     public static void main(String[] args) {
         JFrame f = new JFrame("Start Wars");
+        
+        ImageIcon XWingShip = new ImageIcon("XWingFighter.png");
+
             
         f.addWindowListener(new WindowAdapter(){
                 public void windowClosing(WindowEvent e) {
@@ -50,7 +56,7 @@ public class MainScreen extends Component {
             });
         
        // device.setFullScreenWindow(f);
-        
+        f.add(new JLabel(XWingShip));
         f.add(new MainScreen());
         f.pack();
         f.setResizable(false);

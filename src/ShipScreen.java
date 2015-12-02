@@ -17,4 +17,6 @@ public class ShipScreen
 		//return the loaded image
 		return img;
 	}
+	
+	
 }
