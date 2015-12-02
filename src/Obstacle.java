@@ -28,6 +28,5 @@ public class Obstacle {
 		Y_Cord = y_Cord;
 	}
 	
-	
-	
+
 }

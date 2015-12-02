@@ -29,8 +29,9 @@ public class GameScreen extends Component {
 
     public GameScreen() {
        try {
-           img = ImageIO.read(new File("MainScreen.jpg"));
+           img = ImageIO.read(new File("GameScreen.png"));
        } catch (IOException e) {
+    	   
        }
 
     }
@@ -56,7 +57,7 @@ public class GameScreen extends Component {
             });
         
        // device.setFullScreenWindow(f);
-        f.add(new MainScreen());
+        f.add(new GameScreen());
         f.pack();
         f.setResizable(false);
         
