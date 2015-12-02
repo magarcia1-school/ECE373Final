@@ -57,9 +57,12 @@ public class MainScreen extends Component {
         
        // device.setFullScreenWindow(f);
         f.add(new JLabel(XWingShip));
+
         f.add(new MainScreen());
         f.pack();
         f.setResizable(false);
+        
+   
         f.setVisible(true);
     }
 }
