@@ -35,28 +35,37 @@ public class MainScreen extends Component {
 
     }
 
-    public Dimension getPreferredSize() {
-        if (img == null) {
-             return new Dimension(100,100);
-        } else {
-        	return new Dimension(img.getWidth(null), img.getHeight(null));
-       }
-    }
+//    public Dimension getPreferredSize() {
+//        if (img == null) {
+//             return new Dimension(100,100);
+//        } else {
+//        	return new Dimension(img.getWidth(null), img.getHeight(null));
+//       }
+//    }
 
     public static void main(String[] args) {
         JFrame f = new JFrame("Start Wars");
         
 //        ImageIcon XWingShip = new ImageIcon("XWingFighter.png");
 
-            
-        f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
+        JLabel background = new JLabel(new ImageIcon("MainScreen.jpg"));
+        background.setLayout(new BorderLayout());
+        f.add(background);
+
+        JLabel label = new JLabel("I'm on fire");
+        label.setFont(label.getFont().deriveFont(Font.BOLD, 48));
+        label.setForeground(Color.WHITE);
+        label.setHorizontalAlignment(JLabel.CENTER);
+
+//        f.addWindowListener(new WindowAdapter(){
+//                public void windowClosing(WindowEvent e) {
+//                    System.exit(0);
+//                }
+//            });
         
        // device.setFullScreenWindow(f);
-        f.add(new MainScreen());
+        background.add(new MainScreen());
+        background.add(label);
         f.pack();
         f.setResizable(false);
         
