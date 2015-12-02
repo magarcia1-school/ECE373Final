@@ -1,6 +1,4 @@
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -16,7 +14,10 @@ import javax.swing.JFrame;
 public class MainScreen extends Component {
           
     BufferedImage img;
-
+    int width = getWidth();
+    int height = getHeight();
+    static GraphicsDevice device = GraphicsEnvironment
+	        .getLocalGraphicsEnvironment().getDefaultScreenDevice();
     public void paint(Graphics g) {
         g.drawImage(img, 0, 0, null);
     }
@@ -29,13 +30,18 @@ public class MainScreen extends Component {
 
     }
 
-    public Dimension getPreferredSize() {
-        if (img == null) {
-             return new Dimension(100,100);
-        } else {
-           return new Dimension(img.getWidth(null), img.getHeight(null));
-       }
-    }
+//    public Dimension getPreferredSize() {
+////    	Toolkit tk = Toolkit.getDefaultToolkit();
+////    	int xsize = 100;
+////    	int ysize = 100;
+//        if (img == null) {
+//             return new Dimension(100,100);
+//        } else {
+////        	xsize = (int) tk.getScreenSize().getWidth();
+////        	ysize = (int) tk.getScreenSize().getHeight();
+//        	return new Dimension(img.getWidth(null), img.getHeight(null));
+//       }
+//    }
 
     public static void main(String[] args) {
 
@@ -46,7 +52,7 @@ public class MainScreen extends Component {
                     System.exit(0);
                 }
             });
-
+        device.setFullScreenWindow(f);
         f.add(new MainScreen());
         f.pack();
         f.setVisible(true);
