@@ -20,8 +20,6 @@ public class GameScreen extends Component {
     int width = getWidth();
     int height = getHeight();
     
-    ShipScreen shipScreen;
-    
     
     public void paint(Graphics g) {
         g.drawImage(img, 0, 0, null);
@@ -31,7 +29,6 @@ public class GameScreen extends Component {
        try {
            img = ImageIO.read(new File("GameScreen.png"));
        } catch (IOException e) {
-    	   
        }
 
     }
@@ -45,23 +42,37 @@ public class GameScreen extends Component {
     }
 
     public static void main(String[] args) {
-        JFrame f = new JFrame("Start Wars Game Screen");
+//        JFrame f = new JFrame("Start Wars Game Screen");
         
-//        ImageIcon XWingShip = new ImageIcon("GameScreen.png");
+//        ImageIcon GreenLightSaber = new ImageIcon("GreenLightSaber.png");
+        
+//        JLabel background = new JLabel(new ImageIcon("GameScreen.jpg"));
+//        background.setLayout(new BorderLayout());
+//        f.add(background);
+//
+//        JLabel label = new JLabel("GreenLightSaber.png");
+//        label.setHorizontalAlignment(JLabel.CENTER);
+//
+//        background.add(label);
+//        background.add(new GameScreen());
+//
+//        background.add(new GameScreen());
+//        background.add(label);
+//        f.pack();
+//        f.setResizable(false);
+//        f.setVisible(true);
+    	
+    	JFrame background = new JFrame("Star Wars Game");
+        background.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //closes the program when the window is closed
+        background.setResizable(false); //don't allow the user to resize the window
+        background.setSize(new Dimension(818,568));
+        background.setVisible(true);
 
-            
-        f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
-        
-       // device.setFullScreenWindow(f);
-        f.add(new GameScreen());
-        f.pack();
-        f.setResizable(false);
-        
-   
-        f.setVisible(true);
+        ImagePanel back = new ImagePanel("back.JPG");
+        background.add(back);
+
+        back.addMouseListener(this);
+
+
     }
 }
