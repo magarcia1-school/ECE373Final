@@ -50,7 +50,7 @@ public class Drive implements MouseListener
      *28 rectangles across that are 29 x 73
      */
 
-    public HelicopterForm()
+    public Drive()
     {
         NUMRECS = 28;
         RECHEIGHT = 73;
@@ -440,13 +440,13 @@ class ImagePanel extends JPanel {
      public void drawStrings(Graphics g)
      {
          g.setFont(new Font("Arial",Font.BOLD,20));
-        g.drawString("Distance: " + HelicopterForm.distance,30,500);
+        g.drawString("Distance: " + Drive.distance,30,500);
         g.setFont(new Font("Arial",Font.BOLD,20));
-        if (HelicopterForm.distance > HelicopterForm.maxDistance)
-            g.drawString("Best: " + HelicopterForm.distance,650,500);
+        if (Drive.distance > Drive.maxDistance)
+            g.drawString("Best: " + Drive.distance,650,500);
         else
-            g.drawString("Best: " + HelicopterForm.maxDistance,650,500);
-        if(HelicopterForm.paused)
+            g.drawString("Best: " + Drive.maxDistance,650,500);
+        if(Drive.paused)
         {
                 g.setColor(Color.WHITE);
                 g.setFont(new Font("Chiller",Font.BOLD,72));
